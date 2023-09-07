@@ -1,0 +1,26 @@
+{
+  "results_of_verification": 
+  [
+    {
+      "person_details": {
+        "full_name": "john richard doe",
+        "citizenship": "MD",
+        "date_of_birth": "1999-12-31",
+        "gender": "M"
+      },
+      "detected": false,
+      "sanctionable_entities": []
+    },
+    {
+      "person_details": {
+        "full_name": "alice doe",
+        "citizenship": "MD",
+        "date_of_birth": "2000-01-01",
+        "gender": "F"
+      },
+      "detected": false,
+      "sanctionable_entities": []
+    }
+  ],
+  "client_id": "123123"
+}

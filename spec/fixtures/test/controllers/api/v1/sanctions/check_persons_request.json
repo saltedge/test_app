@@ -1,0 +1,42 @@
+{
+  "data": {
+    "list_of_persons": [
+      {
+        "fields_to_check": [
+          "full_name",
+          "date_of_birth",
+          "citizenship",
+          "gender"
+        ],
+        "fields": {
+          "full_name": "john richard doe",
+          "date_of_birth": "1999-12-31",
+          "place_of_birth": "some place of birth",
+          "gender": "M",
+          "residence_address": "address",
+          "citizenship": "MD"
+        }
+      },
+      {
+        "fields_to_check": [
+          "full_name",
+          "date_of_birth",
+          "citizenship",
+          "gender"
+        ],
+        "fields": {
+          "full_name": "alice doe",
+          "date_of_birth": "2000-01-01",
+          "place_of_birth": "some place of birth",
+          "gender": "F",
+          "residence_address": "address",
+          "citizenship": "MD"
+        }
+      }
+    ],
+    "meta": {
+      "client_id": "123123",
+      "client_email": "client@mail.com"
+    }
+  }
+}

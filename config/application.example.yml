@@ -1,0 +1,48 @@
+defaults: &defaults
+  application:
+    url: "http://localhost:9009"
+    host: "localhost:9009"
+    domain: "test_app.com"
+    name: "test_app"
+    title: "test_app"
+  redis: &redis
+    port: 6379
+    host: <%= ENV.fetch("REDIS_HOST", "localhost") %>
+    database: 0
+    namespace: "test_app"
+    password: ""
+    encryption_key: "fd8737c0ce4d1cdb1dfe3f247fe6e7c7aaa525c8bf7f3ae3f7e27c103d03b382"
+  email: &email
+    notify: "notify@test_app.com"
+    error: "error@test_app.com"
+    delivery_method: "sendmail"
+  rest:
+    open_timeout: 10
+    timeout: 10
+  session_store: "_test_app_session"
+  secret_key_base: "super-extra-secret-key"
+  external_app:
+    base_url: "https://external_app.com"
+    external_app_to_test_app_secret: secret
+  cache_lifetime: 12
+  log:
+    log_level: info
+    autoflush_log: true
+
+development:
+  <<: *defaults
+  email:
+    <<: *email
+    delivery_method: "test"
+
+test:
+  <<: *defaults
+  redis:
+    <<: *redis
+    namespace: test_app-test
+  email:
+    <<: *email
+    delivery_method: "test"
+
+staging:
+  <<: *defaults
