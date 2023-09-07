@@ -1,0 +1,47 @@
+<div class="container">
+<h2>Sanctionable Person's details</h2>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>List Name</td>
+        <td><%= @sanctionable_entity.list_name %></td>
+      </tr>
+      <tr>
+        <td>Official Id</td>
+        <td><%= @sanctionable_entity.official_id %></td>
+      </tr>
+      <tr>
+        <td>Additional Info</td>
+        <td><%= @sanctionable_entity.additional_info %></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td><%= @sanctionable_entity.gender %></td>
+      </tr>
+       <tr>
+        <td>Extra</td>
+        <td><%= @sanctionable_entity.extra %></td>
+      </tr>
+      <tr>
+        <td>Created At</td>
+        <td><%= @sanctionable_entity.created_at %></td>
+      </tr>
+      <tr>
+        <td>Creator Id</td>
+        <td><%= @sanctionable_entity.creator_id %></td>
+      </tr>
+      <tr>
+        <td>Updated At</td>
+        <td><%= @sanctionable_entity.updated_at %></td>
+      </tr>
+      <tr>
+        <td>Updater Id</td>
+        <td><%= @sanctionable_entity.updater_id %></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <%= link_to "Edit", edit_sanctionable_entity_path(@sanctionable_entity), class: "btn btn-outline-info" %></button>
+  <%= link_to "Destroy", sanctionable_entity_path(@sanctionable_entity), class: "btn btn-outline-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+</div>

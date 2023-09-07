@@ -1,0 +1,10 @@
+en:
+  errors:
+    messages:
+      InternalServerError:   "An error has occurred. Please report this error."
+      WrongRequestFormat:    "Wrong request format."
+      AppSecretNotReceived:  "Missing HTTP_APP_SECRET header in request."
+      ExternalAppSecretInvalid: "Wrong external_app_to_test_app"
+      UnsupportedDataFormat: "Unsupported data format (Array). Please send object"
+      MissingRequiredFields: "API: Missing required fields in json"
+      ListOfPersonsLimitExceeded: "API: Too much persons. Max: 3"

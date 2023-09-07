@@ -1,0 +1,38 @@
+<div class="container">
+  <% if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-success" %>
+      <%= link_to "Sign in", new_user_session_path, class:"btn btn-outline-primary" %>
+  <% end %>
+  <br><br>
+  
+  <h2>Sanctionable Entities</h2>
+  <%= link_to "Create", new_sanctionable_entity_path, class: "btn btn-success" %></button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>        
+        <th scope="col">Names</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Birth Dates</th>
+      </tr>
+    </thead>
+    <% @sanctionable_entities.each do |sanctionable_entity| %>
+      <tbody>
+        <tr>
+          <td><%= link_to sanctionable_entity.id, sanctionable_entity %></td>          
+          <td><%= sanctionable_entity.extra["name_aliases"]&.map { |n_a| n_a["full_name"] }&.uniq&.join(", ") %></td>
+          <td><%= sanctionable_entity.gender %></td>
+          <td><%= sanctionable_entity.extra["birth_datas"]&.map { |b_d| b_d["date"] }&.uniq&.join(", ") %></td>
+          <td><%= link_to "Edit", edit_sanctionable_entity_path(sanctionable_entity) %></td>
+          <td><%= link_to "Destroy", sanctionable_entity_path(sanctionable_entity), method: :delete, data: { confirm: "Are you sure?" } %></td>
+        </tr>
+      </tbody>
+    <% end %> 
+  </table>
+
+  <div class="flickr_pagination mb-4">
+  <%= will_paginate @sanctionable_entities, :container => false %>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <%= render 'shared/errors', obj: @sanctionable_entity %>
+  <%= form_with model: @sanctionable_entity do |form| %>
+    <div class="mb-3">
+      <%= form.label :list_name, class: "form-label" %><br>
+      <%= form.text_field :list_name, class: "form-control" %>
+    </div><br>
+    <div class="mb-3">
+      <%= form.label :official_id, class: "form-label" %><br>
+      <%= form.text_field :official_id, class: "form-control" %>
+    </div><br>
+    <div class="mb-3">
+      <%= form.label :gender, class: "form-label" %><br>
+      <%= form.text_field :gender, class: "form-control" %>
+    </div><br>
+    <div class="mb-3">
+      <%= form.label :additional_info, class: "form-label" %><br>
+      <%= form.text_field :additional_info, class: "form-control" %>
+    </div><br>
+    <div class="mb-3">
+      <%= form.label :extra, class: "form-label" %><br>
+      <%= form.text_area :extra, class: "form-control" %>
+    </div><br>
+
+    <div class="mb-3"> 
+      <%= form.submit class: "btn btn-info btn-lg" %>
+    </div>
+  <% end %>
+</div>
