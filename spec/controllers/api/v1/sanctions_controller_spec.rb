@@ -35,12 +35,12 @@ describe Api::V1::SanctionsController do
     end
 
     it "should return ListOfPersonsLimitExceeded error" do
-      check_persons_params["data"]["list_of_persons"] += [{}, {}, {}]
+      check_persons_params["data"]["list_of_persons"] += Array.new(100, {})
       post :check_persons, params: check_persons_params
 
       result = parsed_response
       result["error_class"].should == "ListOfPersonsLimitExceeded"
-      result["message"].should     == "API: Too much persons. Max: 3"
+      result["message"].should     == "API: Too much persons. Max: 100"
       result["status"].should      == "not_acceptable"
     end
 

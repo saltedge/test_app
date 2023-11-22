@@ -2,8 +2,9 @@ module Error
   class TestAppError < StandardError
     PARAMS_IGNORE ||= %w(format action controller route error).freeze
 
-    def initialize(message=I18n.t("errors.messages.#{self.class.name.demodulize}"))
-      super
+    def initialize(*args, **extra_params)
+      args[0] ||= I18n.t("errors.messages.#{self.class.name.demodulize}", **extra_params)
+      super(args[0])
     end
 
     def hash_with_params(params={})

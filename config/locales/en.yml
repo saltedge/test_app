@@ -7,4 +7,4 @@ en:
       ExternalAppSecretInvalid: "Wrong external_app_to_test_app"
       UnsupportedDataFormat: "Unsupported data format (Array). Please send object"
       MissingRequiredFields: "API: Missing required fields in json"
-      ListOfPersonsLimitExceeded: "API: Too much persons. Max: 3"
+      ListOfPersonsLimitExceeded: "API: Too much persons. Max: %{max_size}"
