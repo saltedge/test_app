@@ -5,7 +5,6 @@ class Api::V1::SanctionsController < Api::V1::BaseController
 
   def check_persons
     check_required_fields
-
     render json: {
       results_of_verification: Verifier.new(data).run,
       client_id: data["meta"]["client_id"].to_s

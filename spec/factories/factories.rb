@@ -25,5 +25,11 @@ FactoryBot.define do
         ]
       }
     }
+
+    trait :with_fingerprints do
+      after :create do |entry, _|
+        entry.fingerprints = FingerprintBuilder.for_entry(entry)
+      end
+    end
   end
 end

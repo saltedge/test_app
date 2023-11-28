@@ -22,7 +22,9 @@ class SanctionableEntitiesController < ApplicationController
         extra:      sanctionable_entity_extra
       )
     )
+    sanctionable_entity.fingerprints = FingerprintBuilder.for_entry(sanctionable_entity)
     sanctionable_entity.save!
+
     redirect_to :sanctionable_entities
   end
 
@@ -32,12 +34,15 @@ class SanctionableEntitiesController < ApplicationController
 
   def update
     sanctionable_entity = SanctionableEntity.find(params[:id])
-    sanctionable_entity.update!(
-      sanctionable_entity_params.merge(
-        extra:      sanctionable_entity_extra,
-        updater_id: current_user.id
+    sanctionable_entity.transaction do
+      sanctionable_entity.update!(
+        sanctionable_entity_params.merge(
+          extra:      sanctionable_entity_extra,
+          updater_id: current_user.id,
+        )
       )
-    )
+      sanctionable_entity.fingerprints = FingerprintBuilder.for_entry(sanctionable_entity)
+    end
     redirect_to :sanctionable_entities
   end
 
@@ -61,7 +66,6 @@ class SanctionableEntitiesController < ApplicationController
   end
 
   def sanctionable_entity_extra
-    extra = JSON.parse(sanctionable_entity_params[:extra].gsub("=>", ": ")).deep_symbolize_keys
-    extra
+    @sanctionable_entity_extra ||= JSON.parse(sanctionable_entity_params[:extra].gsub("=>", ": ")).deep_symbolize_keys
   end
 end

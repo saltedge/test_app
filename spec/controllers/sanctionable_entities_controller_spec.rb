@@ -15,7 +15,7 @@ describe SanctionableEntitiesController do
         "extra"       => {
           "birth_datas"  => [{ "date" => "1999-12-31" }],
           "citizenships" => [{ "country_code" => "MD" }],
-          "name_aliases" => [{ "full_name" => "alice doe" }]
+          "name_aliases" => [{ "full_name" => "alice doe" }, { "full_name" => "alise doe" }]
         }.to_json
       }
     end
@@ -28,6 +28,7 @@ describe SanctionableEntitiesController do
           "action" => "create"
         }
       }.to change { SanctionableEntity.count }.by(1)
+      .and change { SanctionableEntityFingerprint.count }.by(2)
     end
   end
 
@@ -54,7 +55,7 @@ describe SanctionableEntitiesController do
 
   describe "DELETE #destroy" do
     it "deletes sanctionable entity" do
-      expect { delete :destroy, params: { id: sanctionable_entity_3.id } 
+      expect { delete :destroy, params: { id: sanctionable_entity_3.id }
     }.to change { SanctionableEntity.count }.by(-1)
     end
   end

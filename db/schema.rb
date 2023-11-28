@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_23_091153) do
+ActiveRecord::Schema.define(version: 2023_11_23_201448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 2023_03_23_091153) do
     t.index ["official_id", "list_name"], name: "index_sanctionable_entities_on_official_id_and_list_name", unique: true
   end
 
+  create_table "sanctionable_entity_fingerprints", force: :cascade do |t|
+    t.bigint "sanctionable_entity_id", null: false
+    t.string "official_id"
+    t.string "fingerprint"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fingerprint"], name: "index_sanctionable_entity_fingerprints_on_fingerprint"
+    t.index ["sanctionable_entity_id"], name: "fingerprints_on_sanctionable_entity_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -41,4 +51,5 @@ ActiveRecord::Schema.define(version: 2023_03_23_091153) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "sanctionable_entity_fingerprints", "sanctionable_entities"
 end

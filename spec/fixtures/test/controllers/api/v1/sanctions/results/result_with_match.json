@@ -10,7 +10,8 @@
       "detected": true,
       "sanctionable_entities": [
         {
-          "id": 1
+          "id": 1,
+          "official_id": "EU.2.112233"
         }
       ]
     },
@@ -24,7 +25,8 @@
       "detected": true,
       "sanctionable_entities": [
         {
-          "id": 2
+          "id": 2,
+          "official_id": "EU.4.112233"
         }
       ]
     }

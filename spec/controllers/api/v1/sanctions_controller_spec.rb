@@ -13,8 +13,8 @@ describe Api::V1::SanctionsController do
     end
 
     it "should do sanctions check and return result (match true)" do
-      sanctionable_person_1 = create :sanctionable_entity
-      sanctionable_person_2 = create :sanctionable_entity, gender: "F", extra: {
+      sanctionable_person_1 = create :sanctionable_entity, :with_fingerprints, official_id: 'EU.2.112233'
+      sanctionable_person_2 = create :sanctionable_entity, :with_fingerprints, official_id: 'EU.4.112233', gender: "F", extra: {
         birth_datas:  [{ date: "2000-01-01" }],
         citizenships: [{ country_code: "MD" }],
         name_aliases: [{ full_name: "alice doe"}]
