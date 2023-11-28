@@ -20,6 +20,8 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "unicorn", require: false
 gem "settingslogic"
 gem "airbrake", "~> 9"
+gem 'rufus-scheduler'
+gem 'nokogiri'
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
