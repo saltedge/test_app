@@ -24,6 +24,8 @@ defaults: &defaults
   external_app:
     base_url: "https://external_app.com"
     external_app_to_test_app_secret: secret
+  sanctions_sources:
+    un_url: "https://scsanctions.un.org/resources/xml/en/consolidated.xml"
   cache_lifetime: 12
   log:
     log_level: info

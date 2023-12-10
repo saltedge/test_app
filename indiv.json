@@ -1,0 +1,68 @@
+{
+  "DATAID": "110447",
+  "VERSIONNUM": "1",
+  "FIRST_NAME": "MUHAMMAD",
+  "SECOND_NAME": "TAHER",
+  "THIRD_NAME": "ANWARI",
+  "UN_LIST_TYPE": "Taliban",
+  "REFERENCE_NUMBER": "TAi.005",
+  "LISTED_ON": "2001-02-23",
+  "NAME_ORIGINAL_SCRIPT": "محمد طاهر أنوري",
+  "COMMENTS1": "Belongs to Andar tribe. Review pursuant to Security Council resolution\n1822 (2008) was concluded on 23 Jul. 2010. INTERPOL-UN Security Council Special Notice web link:https://www.interpol.int/en/How-we-work/Notices/View-UN-Notices-Individuals",
+  "TITLE": {
+    "VALUE": "Mullah"
+  },
+  "DESIGNATION": {
+    "VALUE": [
+      "a) Director of Administrative Affairs under the Taliban\nregime",
+      "Minister of Finance under the Taliban regime"
+    ]
+  },
+  "NATIONALITY": {
+    "VALUE": "Afghanistan"
+  },
+  "LIST_TYPE": {
+    "VALUE": "UN List"
+  },
+  "LAST_DAY_UPDATED": {
+    "VALUE": [
+      "2003-09-03",
+      "2007-07-09",
+      "2007-09-21",
+      "2011-11-29"
+    ]
+  },
+  "INDIVIDUAL_ALIAS": [
+    {
+      "QUALITY": "Good",
+      "ALIAS_NAME": "Mohammad Taher Anwari"
+    },
+    {
+      "QUALITY": "Good",
+      "ALIAS_NAME": "Muhammad Tahir Anwari"
+    },
+    {
+      "QUALITY": "Good",
+      "ALIAS_NAME": "Mohammad Tahre Anwari"
+    },
+    {
+      "QUALITY": "Low",
+      "ALIAS_NAME": "Haji Mudir"
+    }
+  ],
+  "INDIVIDUAL_ADDRESS": {
+    "COUNTRY": null
+  },
+  "INDIVIDUAL_DATE_OF_BIRTH": {
+    "TYPE_OF_DATE": "APPROXIMATELY",
+    "YEAR": "1961"
+  },
+  "INDIVIDUAL_PLACE_OF_BIRTH": {
+    "CITY": "Zurmat District",
+    "STATE_PROVINCE": "Paktia Province",
+    "COUNTRY": "Afghanistan"
+  },
+  "INDIVIDUAL_DOCUMENT": null,
+  "SORT_KEY": null,
+  "SORT_KEY_LAST_MOD": null
+}

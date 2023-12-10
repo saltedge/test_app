@@ -20,6 +20,8 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "unicorn", require: false
 gem "settingslogic"
 gem "airbrake", "~> 9"
+gem "nokogiri", "1.12.5"
+gem "iso_country_codes", "~> 0.7.8"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
